@@ -1,0 +1,7 @@
+# .vscode
+.vscode
+
+# ejecutables
+push_swap
+*.a
+*.o
