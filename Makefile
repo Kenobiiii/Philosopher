@@ -5,7 +5,7 @@ CC = clang
 CFLAGS = -Wall -Werror -Wextra
 
 USER		= paromero
-SRCS		= 
+SRCS		= src/main.c
 OBJS		= $(SRCS:.c=.o)
 INCLUDES	= -I ./libft
 LIBFT		= libft/libft.a
@@ -34,14 +34,12 @@ $(NAME): $(OBJS)
 clean:
 	@echo "$(GREEN)Cleaning...$(RESET)"
 	@$(MAKE) -C ./libft clean
-	@$(MAKE) -C clean
 	@$(RM) $(OBJS)
 	@echo "$(GREEN)Clean complete.$(RESET)"
 
 fclean: clean
 	@echo "$(GREEN)Deleting $(NAME)...$(RESET)"
 	@$(MAKE) -C ./libft fclean
-	@$(MAKE) -C fclean
 	@$(RM) $(NAME)
 	@echo "$(GREEN)Deleted $(NAME)$(RESET)"
 
