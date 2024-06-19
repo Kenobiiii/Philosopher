@@ -12,12 +12,7 @@
 
 #include "push_swap.h"
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	// int			*array;
-	// tpointer	a;
-	// tpointer	b;
-	// int			i;
-	
 	check_args(ac, av);
 }

@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:28:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/06/19 19:10:28 by paromero         ###   ########.fr       */
+/*   Updated: 2024/06/19 23:24:40 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-typedef t_stack *tpointer;
+typedef t_stack	*t_pointer;
 
-void	ft_error();
+void	ft_error(void);
 void	check_args(int ac, char **av);
 
 #endif

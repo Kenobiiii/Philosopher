@@ -12,10 +12,9 @@
 
 #include "push_swap.h"
 
-
 void	one_arg(char *array)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (array[i] != '\0')
@@ -25,7 +24,7 @@ void	one_arg(char *array)
 		if (array[i] < '0' || array[i] > '9')
 			ft_error();
 		i++;
-	} 
+	}
 }
 
 void	various_args(int ac, char **av)
@@ -35,21 +34,21 @@ void	various_args(int ac, char **av)
 
 	i = 1;
 	while (i < ac)
-    {
-        j = 0;
-        while (av[i][j] != '\0')
-        {
-            if (av[i][j] < '0' || av[i][j] > '9')
-                ft_error();
-            j++;
-        }
+	{
+		j = 0;
+		while (av[i][j] != '\0')
+		{
+			if (av[i][j] < '0' || av[i][j] > '9')
+				ft_error();
+			j++;
+		}
 		i++;
-    }
+	}
 }
 
-void check_args(int ac, char **av)
+void	check_args(int ac, char **av)
 {
-    if (ac == 2)
+	if (ac == 2)
 		one_arg(av[1]);
 	else if (ac > 2)
 		various_args(ac, av);
