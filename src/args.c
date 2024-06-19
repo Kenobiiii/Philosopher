@@ -38,7 +38,9 @@ void	various_args(int ac, char **av)
 		j = 0;
 		while (av[i][j] != '\0')
 		{
-			if (av[i][j] < '0' || av[i][j] > '9')
+			if (av[1][j] == ' ')
+				ft_error();
+			else if (av[i][j] < '0' || av[i][j] > '9')
 				ft_error();
 			j++;
 		}
@@ -55,3 +57,5 @@ void	check_args(int ac, char **av)
 	else
 		exit(EXIT_SUCCESS);
 }
+
+// void	check_repeated_nums(int i, int j, char)
