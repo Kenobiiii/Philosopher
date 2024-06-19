@@ -20,6 +20,8 @@ void	one_arg(char *array)
 	i = 0;
 	while (array[i] != '\0')
 	{
+		if (array[i] == ' ')
+			i++;
 		if (array[i] < '0' || array[i] > '9')
 			ft_error();
 		i++;
