@@ -31,9 +31,7 @@ $(NAME): $(OBJ) $(INCLUDE) $(BONUS_OBJS)
 	@echo "$(GREEN)Library created: $(NAME)$(RESET)"
 
 %.o: %.c
-	@echo "$(GREEN)Compiling $<...$(RESET)"
 	@$(CC) -c -o $@ $<
-	@echo "$(GREEN)$< compiled!$(RESET)"
 
 clean:
 	@echo "$(GREEN)Cleaning...$(RESET)"
