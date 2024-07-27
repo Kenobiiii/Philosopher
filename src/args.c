@@ -57,5 +57,3 @@ void	check_args(int ac, char **av)
 	else
 		exit(EXIT_SUCCESS);
 }
-
-// void	check_repeated_nums(int i, int j, char)
