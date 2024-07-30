@@ -14,5 +14,10 @@
 
 int	main(int ac, char **av)
 {
-	check_args(ac, av);
+	t_stack	*head;
+
+	head = NULL;
+	check_args(ac, av, &head);
+	hasDuplicates(head);
+	return (0);
 }
