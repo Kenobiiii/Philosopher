@@ -18,6 +18,6 @@ int	main(int ac, char **av)
 
 	head = NULL;
 	check_args(ac, av, &head);
-	hasDuplicates(head);
+	hasduplicates(head);
 	return (0);
 }
