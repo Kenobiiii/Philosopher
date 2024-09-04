@@ -12,12 +12,22 @@
 
 #include "push_swap.h"
 
+void printList(t_stack* node) {
+    while (node != NULL) {
+        printf("Value: %d, Index: %d, Pos: %d -> ", 
+               node->value, node->index, node->pos);
+        node = node->next;
+    }
+    printf("NULL\n");
+}
+
 int	main(int ac, char **av)
 {
-	t_stack	*head;
+	t_stack	*A;
 
-	head = NULL;
-	check_args(ac, av, &head);
-	hasduplicates(head);
+	A = NULL;
+	check_args(ac, av, &A);
+	hasduplicates(A);
+	printList(A);
 	return (0);
 }
