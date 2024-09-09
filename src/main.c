@@ -23,11 +23,11 @@ void printList(t_stack* node) {
 
 int	main(int ac, char **av)
 {
-	t_stack	*A;
+	t_stack	*a;
 
-	A = NULL;
-	check_args(ac, av, &A);
-	hasduplicates(A);
-	printList(A);
+	a = NULL;
+	check_args(ac, av, &a);
+	hasduplicates(a);
+	printList(a);
 	return (0);
 }
