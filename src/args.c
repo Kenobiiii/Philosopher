@@ -58,18 +58,6 @@ int	hasduplicates(t_stack	*list)
 	}
 	return (0);
 }
-void ft_free(char **tokens)
-{
-	int j;
-
-	j = 0;
-	while (tokens[j] != NULL)
-	{
-		free(tokens[j]);
-		j++;
-	}
-	free(tokens);
-}
 
 void	one_arg(char *array, t_stack **list)
 {
