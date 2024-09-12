@@ -24,3 +24,25 @@ void ft_free(char **tokens)
 	}
 	free(tokens);
 }
+
+void	assign_indexes(t_stack *list)
+{
+	t_stack *current;
+	t_stack *compare;
+	int		index;
+
+	current = list;
+	while(current != NULL)
+	{
+		index = 1;
+		compare = list;
+		while (compare != NULL)
+		{
+			if (compare->value < current->value)
+				index++;
+			compare = compare->next;
+		}
+		current->index = index;
+		current = current->next;
+	}
+}

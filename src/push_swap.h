@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:28:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/09 18:21:39 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/12 18:18:53 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef t_stack	*t_pointer;
 void	ft_error(void);
 void	check_args(int ac, char **av, t_stack **list);
 void	ft_free(char **tokens);
+void	assign_indexes(t_stack *list);
 
 int		hasduplicates(t_stack *list);
 
