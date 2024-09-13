@@ -5,7 +5,7 @@ CC = clang
 CFLAGS = -Wall -Werror -Wextra
 
 USER		= paromero
-SRCS		= src/main.c src/args.c src/errors.c src/utils.c src/push.c src/swap.c
+SRCS		= src/main.c src/args.c src/errors.c src/utils.c src/push.c src/swap.c src/rotate.c
 OBJS		= $(SRCS:.c=.o)
 INCLUDES	= -I ./libft
 LIBFT		= libft/libft.a

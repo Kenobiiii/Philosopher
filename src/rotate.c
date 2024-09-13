@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 00:14:36 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/14 00:56:56 by paromero         ###   ########.fr       */
+/*   Created: 2024/09/14 00:41:50 by paromero          #+#    #+#             */
+/*   Updated: 2024/09/14 01:01:54 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    swap(t_stack **list)
+static t_stack	*ft_lstlastr(t_stack *lst)
+{
+	t_stack	*tmp;
+
+	tmp = lst;
+	if (!tmp)
+		return (NULL);
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+	return (tmp);
+}
+
+void    rotate(t_stack **list)
 {
     t_stack *node;
 
@@ -21,23 +33,23 @@ void    swap(t_stack **list)
     {
         node = *list;
         *list = (*list)->next;
-        node->next = (*list)->next;
-        (*list)->next = node;
+        node->next = NULL;
+        ft_lstlastr(*list)->next = node;
     }
 }
 
-void    sa(t_stack **list)
+void    ra(t_stack **list)
 {
-    swap(list);
+    rotate(list);
 }
 
-void    sb(t_stack **list)
+void    rb(t_stack **list)
 {
-    swap(list);
+    rotate(list);
 }
 
-void    ss(t_stack **list1, t_stack **list2)
+void    rr(t_stack **list1, t_stack **list2)
 {
-    swap(list1);
-    swap(list2);
+    rotate(list1);
+    rotate(list2);
 }

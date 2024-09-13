@@ -33,7 +33,7 @@ int	main(int ac, char **av)
 	assign_indexes(a);
 	printList(a);
 	//printList(b);
-	sa(&a);
+	ra(&a);
 	printList(a);
 	//printList(b);
 	return (0);
