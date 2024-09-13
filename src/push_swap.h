@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:28:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/14 00:50:48 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/14 01:27:06 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,13 @@ void    ss(t_stack **list1, t_stack **list2);
 void    ra(t_stack **list);
 void    rb(t_stack **list);
 void    rr(t_stack **list1, t_stack **list2);
+void    rra(t_stack **list);
+void    rrb(t_stack **list);
+void    rrr(t_stack **list1, t_stack **list2);
 
 
 
+t_stack	*ft_lstlastr(t_stack *lst);
 
 int		hasduplicates(t_stack *list);
 
