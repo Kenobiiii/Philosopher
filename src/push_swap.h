@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:28:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/13 23:52:08 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/14 00:18:48 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,9 @@ void	ft_free(char **tokens);
 void	assign_indexes(t_stack *list);
 void    pb(t_stack **list1, t_stack **list2);
 void    pa(t_stack **list1, t_stack **list2);
+void    sa(t_stack **list);
+void    sb(t_stack **list);
+
 
 
 int		hasduplicates(t_stack *list);
