@@ -14,8 +14,8 @@
 
 void printList(t_stack* node) {
     while (node != NULL) {
-        printf("Value: %d, Index: %d, Pos: %d -> ", 
-               node->value, node->index, node->pos);
+        printf("Value: %d "/*, Index: %d, Pos: %d -> */, 
+               node->value/*, node->index, node->pos*/);
         node = node->next;
     }
     printf("NULL\n");
@@ -24,11 +24,17 @@ void printList(t_stack* node) {
 int	main(int ac, char **av)
 {
 	t_stack	*a;
+	t_stack *b;
 
 	a = NULL;
+	b = NULL;
 	check_args(ac, av, &a);
 	hasduplicates(a);
 	assign_indexes(a);
 	printList(a);
+	printList(b);
+	pb(&a, &b);
+	printList(a);
+	printList(b);
 	return (0);
 }
