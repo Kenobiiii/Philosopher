@@ -36,10 +36,5 @@ int	main(int ac, char **av)
 	{
 		ft_sorting(&a, &b);
 	}
-		//pb(&a, &b);
-	ft_printf("A list\n");
-	printlist(a);
-	ft_printf("B list\n");
-	printlist(b);
 	return (0);
 }
