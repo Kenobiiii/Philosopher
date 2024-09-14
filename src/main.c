@@ -12,27 +12,27 @@
 
 #include "push_swap.h"
 
-void printList(t_stack* node) {
-    while (node != NULL) {
-        printf("Value: %d "/*, Index: %d, Pos: %d -> */, 
-               node->value/*, node->index, node->pos*/);
-        node = node->next;
-    }
-    printf("NULL\n");
+void	printlist(t_stack *node)
+{
+	while (node != NULL)
+	{
+		ft_printf("Value: %d ", node->value);
+		node = node->next;
+	}
+	ft_printf("NULL\n");
 }
 
 int	main(int ac, char **av)
 {
 	t_stack	*a;
-	t_stack *b;
+	t_stack	*b;
 
 	a = NULL;
 	b = NULL;
 	check_args(ac, av, &a);
 	hasduplicates(a);
 	assign_indexes(a);
-	//rra(&a);
 	three_algorithm(&a);
-	printList(a);
+	printlist(a);
 	return (0);
 }

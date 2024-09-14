@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-void ft_free(char **tokens)
+void	ft_free(char **tokens)
 {
-	int j;
+	int	j;
 
 	j = 0;
 	while (tokens[j] != NULL)
@@ -27,12 +27,12 @@ void ft_free(char **tokens)
 
 void	assign_indexes(t_stack *list)
 {
-	t_stack *current;
-	t_stack *compare;
+	t_stack	*current;
+	t_stack	*compare;
 	int		index;
 
 	current = list;
-	while(current != NULL)
+	while (current != NULL)
 	{
 		index = 1;
 		compare = list;
@@ -50,14 +50,14 @@ void	assign_indexes(t_stack *list)
 int	count_values(t_stack *list)
 {
 	t_stack	*current;
-	int i;
+	int		i;
 
 	i = 0;
 	current = list;
-	while(current != NULL)
+	while (current != NULL)
 	{
 		i++;
 		current = current->next;
 	}
-	return(i);
+	return (i);
 }

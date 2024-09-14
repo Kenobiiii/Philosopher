@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:28:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/14 11:43:28 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/14 12:22:09 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,23 +40,22 @@ void	ft_error(void);
 void	check_args(int ac, char **av, t_stack **list);
 void	ft_free(char **tokens);
 void	assign_indexes(t_stack *list);
-void    pb(t_stack **list1, t_stack **list2);
-void    pa(t_stack **list1, t_stack **list2);
-void    sa(t_stack **list);
-void    sb(t_stack **list);
-void    ss(t_stack **list1, t_stack **list2);
-void    ra(t_stack **list);
-void    rb(t_stack **list);
-void    rr(t_stack **list1, t_stack **list2);
-void    rra(t_stack **list);
-void    rrb(t_stack **list);
-void    rrr(t_stack **list1, t_stack **list2);
-void    three_algorithm(t_stack **list);
-
+void	pb(t_stack **list1, t_stack **list2);
+void	pa(t_stack **list1, t_stack **list2);
+void	sa(t_stack **list);
+void	sb(t_stack **list);
+void	ss(t_stack **list1, t_stack **list2);
+void	ra(t_stack **list);
+void	rb(t_stack **list);
+void	rr(t_stack **list1, t_stack **list2);
+void	rra(t_stack **list);
+void	rrb(t_stack **list);
+void	rrr(t_stack **list1, t_stack **list2);
+void	three_algorithm(t_stack **list);
 
 t_stack	*ft_lstlastr(t_stack *lst);
 
 int		hasduplicates(t_stack *list);
-int	count_values(t_stack *list);
+int		count_values(t_stack *list);
 
 #endif
