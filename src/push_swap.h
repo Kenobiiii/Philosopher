@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:28:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/14 12:22:09 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/14 17:08:30 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,13 @@ void	rra(t_stack **list);
 void	rrb(t_stack **list);
 void	rrr(t_stack **list1, t_stack **list2);
 void	three_algorithm(t_stack **list);
+void	ft_sorting(t_stack **list1, t_stack **list2);
 
 t_stack	*ft_lstlastr(t_stack *lst);
 
 int		hasduplicates(t_stack *list);
 int		count_values(t_stack *list);
+
+void	printlist(t_stack *node);
 
 #endif

@@ -19,7 +19,7 @@ void	printlist(t_stack *node)
 		ft_printf("Value: %d ", node->value);
 		node = node->next;
 	}
-	ft_printf("NULL\n");
+	ft_printf("\n");
 }
 
 int	main(int ac, char **av)
@@ -33,7 +33,13 @@ int	main(int ac, char **av)
 	if (count_values(a) == 3)
 		three_algorithm(&a);
 	else
-		ft_printf("mas de 3");
+	{
+		ft_sorting(&a, &b);
+	}
+		//pb(&a, &b);
+	ft_printf("A list\n");
 	printlist(a);
+	ft_printf("B list\n");
+	printlist(b);
 	return (0);
 }
