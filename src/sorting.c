@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 12:58:50 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/14 22:03:56 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/14 22:16:40 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,9 @@ void	ft_pass(t_stack **list1, t_stack **list2)
 void	ft_sorting(t_stack **list1, t_stack **list2)
 {
 	ft_pass(list1, list2);
+	three_algorithm(list1);
+	assign_pos(*list1);
+	assign_pos(*list2);
 	printlist(*list1);
 	printlist(*list2);
-	if (count_values(*list1) == 3)
-		three_algorithm(list1);
 }
