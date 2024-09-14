@@ -46,3 +46,18 @@ void	assign_indexes(t_stack *list)
 		current = current->next;
 	}
 }
+
+int	count_values(t_stack *list)
+{
+	t_stack	*current;
+	int i;
+
+	i = 0;
+	current = list;
+	while(current != NULL)
+	{
+		i++;
+		current = current->next;
+	}
+	return(i);
+}
