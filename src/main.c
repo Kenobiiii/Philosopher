@@ -24,17 +24,15 @@ void printList(t_stack* node) {
 int	main(int ac, char **av)
 {
 	t_stack	*a;
-	//t_stack *b;
+	t_stack *b;
 
 	a = NULL;
-	//b = NULL;
+	b = NULL;
 	check_args(ac, av, &a);
 	hasduplicates(a);
 	assign_indexes(a);
+	//rra(&a);
+	three_algorithm(&a);
 	printList(a);
-	//printList(b);
-	rra(&a);
-	printList(a);
-	//printList(b);
 	return (0);
 }

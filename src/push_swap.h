@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:28:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/14 10:51:46 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/14 11:43:28 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void    rr(t_stack **list1, t_stack **list2);
 void    rra(t_stack **list);
 void    rrb(t_stack **list);
 void    rrr(t_stack **list1, t_stack **list2);
-
+void    three_algorithm(t_stack **list);
 
 
 t_stack	*ft_lstlastr(t_stack *lst);
