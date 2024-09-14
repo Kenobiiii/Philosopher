@@ -30,9 +30,10 @@ int	main(int ac, char **av)
 	a = NULL;
 	b = NULL;
 	check_args(ac, av, &a);
-	hasduplicates(a);
-	assign_indexes(a);
-	three_algorithm(&a);
+	if (count_values(a) == 3)
+		three_algorithm(&a);
+	else
+		ft_printf("mas de 3");
 	printlist(a);
 	return (0);
 }

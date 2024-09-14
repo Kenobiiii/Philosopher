@@ -118,10 +118,14 @@ void	check_args(int ac, char **av, t_stack **list)
 	if (ac == 2)
 	{
 		one_arg(av[1], list);
+		hasduplicates(*list);
+		assign_indexes(*list);
 	}
 	else if (ac > 2)
 	{
 		various_args(ac, av, list);
+		hasduplicates(*list);
+		assign_indexes(*list);
 	}
 	else
 	{
