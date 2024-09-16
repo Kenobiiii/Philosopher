@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 00:41:50 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/16 10:53:52 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/16 21:06:49 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ t_stack	*ft_lstlastr(t_stack *lst)
 void	rotate(t_stack **list)
 {
 	t_stack	*node;
+	t_stack	**tmp;
 
+	tmp = list;
 	node = NULL;
 	if (*list != NULL)
 	{
@@ -36,6 +38,7 @@ void	rotate(t_stack **list)
 		node->next = NULL;
 		ft_lstlastr(*list)->next = node;
 	}
+	list = tmp;
 }
 
 void	ra(t_stack **list)

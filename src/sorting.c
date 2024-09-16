@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 12:58:50 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/16 16:45:53 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/16 21:12:46 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,16 +78,16 @@ void	ft_costs(t_stack *list)
 	}
 }
 
-void	ft_total_cost(t_stack *list_a, t_stack *list_b)
+void	ft_total_cost(t_stack **list_a, t_stack **list_b)
 {
 	t_stack	*node_a;
 	t_stack	*node_b;
 	int		tmp;
 
-	node_b = list_b;
-	while (list_b)
+	node_b = *list_b;
+	while (node_b != NULL)
 	{
-		node_a = list_a;
+		node_a = *list_a;
 		tmp = node_b->target_pos;
 		while (tmp-- > node_a->pos)
 			node_a = node_a->next;
@@ -104,6 +104,101 @@ void	ft_total_cost(t_stack *list_a, t_stack *list_b)
 		node_b = node_b->next;
 	}
 }
+int ft_lowest_cost(t_stack *list)
+{
+	t_stack	*node;
+	int		min_cost;
+	int		pos;
+
+	node = list;
+	min_cost = INT_MAX;
+	pos = -1;
+
+	while (node)
+	{
+		if (node->total_cost < min_cost)
+		{
+			min_cost = node->total_cost;
+			pos = node->pos;
+		}
+		node = node->next;
+	}
+	return (pos);
+}
+
+void	ft_move(t_stack **list_a, t_stack **list_b)
+{
+	int	tmp;
+
+	tmp = ft_lowest_cost(*list_b);
+	while ((*list_b)->pos != tmp)
+		*list_b = (*list_b)->next;
+	while ((*list_a)->pos != (*list_b)->target_pos)
+		*list_a = (*list_a)->next;
+	ft_printf("Valor_a: %d\n", (*list_a)->value);
+	while ((*list_b)->pos != 0 && (*list_a)->pos != 0)
+	{
+		printf("Entra en el while");
+		if ((*list_a)->cost > 0 && (*list_b)->cost > 0)
+		{
+			rr(list_a, list_b);
+			(*list_a)->cost --;
+			(*list_b)->cost --;
+		}
+		else if ((*list_a)->cost < 0 && (*list_b)->cost < 0)
+		{
+			rrr(list_a, list_b);
+			(*list_a)->cost ++;
+			(*list_b)->cost ++;
+		}
+		else
+		{
+			if ((*list_a)->cost < 0 && (*list_b)->cost > 0)
+			{
+				rra(list_a);
+				rb(list_b);
+				(*list_a)->cost ++;
+				(*list_b)->cost --;
+			}
+			else
+			{
+				ra(list_b);
+				rrb(list_a);
+				(*list_a)->cost --;
+				(*list_b)->cost ++;
+			}
+		}
+		
+	}
+	while ((*list_a)->cost > 0)
+	{
+		ft_printf("cost_a+");
+		ft_printf("Coste_a: %d\n", (*list_a)->value);
+		(*list_a)->cost --;
+		ra(list_a);
+		ft_printf("Coste_a: %d\n", (*list_a)->value);
+	}
+	/*
+	while ((*list_a)->cost < 0)
+	{
+		ft_printf("cost_a-");
+		ra(list_a);
+		(*list_a)->cost ++;
+	}
+	while ((*list_b)->cost > 0)
+	{
+		ft_printf("cost_b+");
+		rb(list_b);
+		(*list_b)->cost --;
+	}
+	while ((*list_b)->cost < 0)
+	{
+		ft_printf("cost_b-");
+		rb(list_b);
+		(*list_b)->cost ++;
+	}
+	*/
+}
 
 void	ft_sorting(t_stack **list_a, t_stack **list_b)
 {
@@ -114,8 +209,21 @@ void	ft_sorting(t_stack **list_a, t_stack **list_b)
 	target_pos(*list_a, *list_b);
 	ft_costs(*list_a);
 	ft_costs(*list_b);
-	printf("Lista A:\n");
-	printlist(*list_a);
-	printf("Lista B:\n");
-	printlist(*list_b);
+	ft_total_cost(list_a, list_b);
+	while (list_b)
+	{
+		ft_printf("A\n");
+		printlist(*list_a);
+		ft_printf("A\n");
+		printlist(*list_b);
+		ft_move(list_a, list_b);
+		printlist(*list_a);
+		pa(list_a, list_b);
+		assign_pos(*list_a);
+		assign_pos(*list_b);
+		target_pos(*list_a, *list_b);
+		ft_costs(*list_a);
+		ft_costs(*list_b);
+		ft_total_cost(list_a, list_b);
+	}
 }
