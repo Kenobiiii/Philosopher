@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:28:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/16 10:53:52 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/16 13:22:33 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ typedef struct s_stack
 	int				index;
 	int				pos;
 	int				target_pos;
-	int				cost_a;
-	int				cost_b;
+	int				cost;
+	int				total_cost;
 	struct s_stack	*next;
 }	t_stack;
 
