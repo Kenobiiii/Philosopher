@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 10:45:04 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/14 21:59:46 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/16 13:30:00 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ void	ft_higher_middle(t_stack **list)
 	node1 = *list;
 	node2 = node1->next;
 	node3 = node2->next;
-	if (node3->index > node2->index)
-		printf("terminado");
-	else if (node3->index < node2->index)
+	if (node3->index < node2->index)
 	{
 		if (node1->index < node3->index)
 		{
