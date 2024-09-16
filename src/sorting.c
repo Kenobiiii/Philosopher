@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 12:58:50 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/16 21:12:46 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/16 22:54:55 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,7 +178,6 @@ void	ft_move(t_stack **list_a, t_stack **list_b)
 		ra(list_a);
 		ft_printf("Coste_a: %d\n", (*list_a)->value);
 	}
-	/*
 	while ((*list_a)->cost < 0)
 	{
 		ft_printf("cost_a-");
@@ -197,7 +196,6 @@ void	ft_move(t_stack **list_a, t_stack **list_b)
 		rb(list_b);
 		(*list_b)->cost ++;
 	}
-	*/
 }
 
 void	ft_sorting(t_stack **list_a, t_stack **list_b)
@@ -210,11 +208,11 @@ void	ft_sorting(t_stack **list_a, t_stack **list_b)
 	ft_costs(*list_a);
 	ft_costs(*list_b);
 	ft_total_cost(list_a, list_b);
-	while (list_b)
+	while (*list_b)
 	{
 		ft_printf("A\n");
 		printlist(*list_a);
-		ft_printf("A\n");
+		ft_printf("B\n");
 		printlist(*list_b);
 		ft_move(list_a, list_b);
 		printlist(*list_a);
