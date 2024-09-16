@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 12:58:50 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/16 10:53:57 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/16 11:06:20 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,25 +51,27 @@ void	ft_pass(t_stack **list_a, t_stack **list_b)
 			ra(list_a);
 	}
 }
-int	nearest_index(t_stack *list_a, t_stack *list_b)
+void	nearest_index(t_stack *list_a, t_stack *list_b)
 {
 	int index;
 	t_stack *current;
 	t_stack	*compare;
 
-	index = 1;
 	current = list_b;
 	while (current != NULL)
 	{
+		index = current->index;
 		compare = list_a;
 		while (compare != NULL)
 		{
 			if (current->index > compare->index)
 			{
-				if (index < compare->index)
+				if (current->index > compare->index)
+					compare = compare->next;
+				else if (index < compare->index)
 				{
 					printf("indice: %d\n", compare->index);
-					index = compare->index;
+					current->index = compare->index;
 				}
 				else
 					index = compare->index;
@@ -78,7 +80,7 @@ int	nearest_index(t_stack *list_a, t_stack *list_b)
 		}
 		current = current->next;
 	}
-	return (index);
+	//return (index);
 }
 
 void	target_pos(t_stack *list_a, t_stack *list_b)
@@ -90,7 +92,7 @@ void	target_pos(t_stack *list_a, t_stack *list_b)
 	while (current != NULL)
 	{
 		compare = list_a;
-		printf("%d\n", nearest_index(list_a, list_b));
+		//printf("%d\n", nearest_index(list_a, list_b));
 		while (compare != NULL)
 		{
 			if (compare->index > current->index)
