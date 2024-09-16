@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 12:58:50 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/15 13:45:30 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/16 10:53:57 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,41 +27,41 @@ void	assign_pos(t_stack *list)
 	}
 }
 
-void	ft_pass(t_stack **list1, t_stack **list2)
+void	ft_pass(t_stack **list_a, t_stack **list_b)
 {
 	double	average;
 	int		total;
 
-	total = count_values(*list1);
-	*list2 = NULL;
-	average = ft_average(*list1);
+	total = count_values(*list_a);
+	*list_b = NULL;
+	average = ft_average(*list_a);
 	while (total > 3)
 	{
-		if ((*list1)->index < average)
+		if ((*list_a)->index < average)
 		{
-			pb(list1, list2);
+			pb(list_a, list_b);
 			total--;
 		}
-		else if (verify_index(*list1, average) == 0)
+		else if (verify_index(*list_a, average) == 0)
 		{
 			total--;
-			pb(list1, list2);
+			pb(list_a, list_b);
 		}
 		else
-			ra(list1);
+			ra(list_a);
 	}
 }
-int	nearest_index(t_stack *list1, t_stack *list2)
+int	nearest_index(t_stack *list_a, t_stack *list_b)
 {
 	int index;
 	t_stack *current;
 	t_stack	*compare;
 
 	index = 1;
-	current = list2;
+	current = list_b;
 	while (current != NULL)
 	{
-		compare = list1;
+		compare = list_a;
 		while (compare != NULL)
 		{
 			if (current->index > compare->index)
@@ -81,16 +81,16 @@ int	nearest_index(t_stack *list1, t_stack *list2)
 	return (index);
 }
 
-void	target_pos(t_stack *list1, t_stack *list2)
+void	target_pos(t_stack *list_a, t_stack *list_b)
 {
 	t_stack	*current;
 	t_stack	*compare;
 
-	current = list2;
+	current = list_b;
 	while (current != NULL)
 	{
-		compare = list1;
-		printf("%d\n", nearest_index(list1, list2));
+		compare = list_a;
+		printf("%d\n", nearest_index(list_a, list_b));
 		while (compare != NULL)
 		{
 			if (compare->index > current->index)
@@ -104,16 +104,16 @@ void	target_pos(t_stack *list1, t_stack *list2)
 }
 
 
-void	ft_sorting(t_stack **list1, t_stack **list2)
+void	ft_sorting(t_stack **list_a, t_stack **list_b)
 {
-	ft_pass(list1, list2);
-	three_algorithm(list1);
-	assign_pos(*list1);
-	assign_pos(*list2);
-	target_pos(*list1, *list2);
+	ft_pass(list_a, list_b);
+	three_algorithm(list_a);
+	assign_pos(*list_a);
+	assign_pos(*list_b);
+	target_pos(*list_a, *list_b);
 	printf("Lista A:\n");
-	printlist(*list1);
+	printlist(*list_a);
 	printf("Lista B:\n");
-	printlist(*list2);
+	printlist(*list_b);
 	
 }

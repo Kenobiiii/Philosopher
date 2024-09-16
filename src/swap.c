@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 00:14:36 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/14 12:20:37 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/16 10:53:52 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	sb(t_stack **list)
 	swap(list);
 }
 
-void	ss(t_stack **list1, t_stack **list2)
+void	ss(t_stack **list_a, t_stack **list_b)
 {
-	swap(list1);
-	swap(list2);
+	swap(list_a);
+	swap(list_b);
 }

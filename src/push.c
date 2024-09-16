@@ -6,32 +6,32 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 18:37:53 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/14 12:19:40 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/16 10:53:52 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_stack **list1, t_stack **list2)
+void	push(t_stack **list_a, t_stack **list_b)
 {
 	t_stack	*node;
 
 	node = NULL;
-	if (*list1 != NULL)
+	if (*list_a != NULL)
 	{
-		node = *list1;
-		*list1 = (*list1)->next;
-		node->next = *list2;
-		*list2 = node;
+		node = *list_a;
+		*list_a = (*list_a)->next;
+		node->next = *list_b;
+		*list_b = node;
 	}
 }
 
-void	pb(t_stack **list1, t_stack **list2)
+void	pb(t_stack **list_a, t_stack **list_b)
 {
-	push(list1, list2);
+	push(list_a, list_b);
 }
 
-void	pa(t_stack **list1, t_stack **list2)
+void	pa(t_stack **list_a, t_stack **list_b)
 {
-	push(list2, list1);
+	push(list_b, list_a);
 }

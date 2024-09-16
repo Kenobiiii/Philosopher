@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:28:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/15 11:52:39 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/16 10:53:52 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,19 @@ void	ft_error(void);
 void	check_args(int ac, char **av, t_stack **list);
 void	ft_free(char **tokens);
 void	assign_indexes(t_stack *list);
-void	pb(t_stack **list1, t_stack **list2);
-void	pa(t_stack **list1, t_stack **list2);
+void	pb(t_stack **list_a, t_stack **list_b);
+void	pa(t_stack **list_a, t_stack **list_b);
 void	sa(t_stack **list);
 void	sb(t_stack **list);
-void	ss(t_stack **list1, t_stack **list2);
+void	ss(t_stack **list_a, t_stack **list_b);
 void	ra(t_stack **list);
 void	rb(t_stack **list);
-void	rr(t_stack **list1, t_stack **list2);
+void	rr(t_stack **list_a, t_stack **list_b);
 void	rra(t_stack **list);
 void	rrb(t_stack **list);
-void	rrr(t_stack **list1, t_stack **list2);
+void	rrr(t_stack **list_a, t_stack **list_b);
 void	three_algorithm(t_stack **list);
-void	ft_sorting(t_stack **list1, t_stack **list2);
+void	ft_sorting(t_stack **list_a, t_stack **list_b);
 void	assign_pos(t_stack *list);
 
 t_stack	*ft_lstlastr(t_stack *lst);

@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 01:03:51 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/14 12:17:58 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/16 10:53:52 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ void	rrb(t_stack **list)
 	reverse_rotate(list);
 }
 
-void	rrr(t_stack **list1, t_stack **list2)
+void	rrr(t_stack **list_a, t_stack **list_b)
 {
-	reverse_rotate(list1);
-	reverse_rotate(list2);
+	reverse_rotate(list_a);
+	reverse_rotate(list_b);
 }
