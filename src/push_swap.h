@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:28:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/16 13:22:33 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/16 16:44:54 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,9 @@ t_stack	*ft_lstlastr(t_stack *lst);
 
 int		hasduplicates(t_stack *list);
 int		count_values(t_stack *list);
-int	verify_index(t_stack *list, double average);
+int		verify_index(t_stack *list, double average);
+int		ft_abs(int nbr);
+int		nearest_index(int index1, t_stack *list_a);
 
 double	ft_average(t_stack *list);
 

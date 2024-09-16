@@ -6,26 +6,11 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 12:58:50 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/16 12:36:17 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/16 16:45:53 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	assign_pos(t_stack *list)
-{
-	t_stack	*current;
-	int		i;
-
-	i = 0;
-	current = list;
-	while (current != NULL)
-	{
-		current->pos = i;
-		current = current->next;
-		i++;
-	}
-}
 
 void	ft_pass(t_stack **list_a, t_stack **list_b)
 {
@@ -52,28 +37,10 @@ void	ft_pass(t_stack **list_a, t_stack **list_b)
 	}
 }
 
-	int nearest_index(int index1, t_stack *list_a)
-	{
-		int index2;
-		t_stack *compare;
-
-		index2 = INT_MAX;
-		compare = list_a;
-		while (compare != NULL)
-		{
-			if (index1 < compare->index && compare->index < index2)
-			{
-				index2 = compare->index;
-			}
-			compare = compare->next;
-		}
-		return index2;
-	}
-
-void target_pos(t_stack *list_a, t_stack *list_b)
+void	target_pos(t_stack *list_a, t_stack *list_b)
 {
-	t_stack *current;
-	t_stack *compare;
+	t_stack	*current;
+	t_stack	*compare;
 	int		nearest;
 
 	current = list_b;
@@ -86,7 +53,7 @@ void target_pos(t_stack *list_a, t_stack *list_b)
 			if (compare->index == nearest)
 			{
 				current->target_pos = compare->pos;
-				break;
+				break ;
 			}
 			compare = compare->next;
 		}
@@ -94,10 +61,49 @@ void target_pos(t_stack *list_a, t_stack *list_b)
 	}
 }
 
-// void	ft_costs(t_stack *list_a, t_stack *list_b)
-// {
-	
-// }
+void	ft_costs(t_stack *list)
+{
+	t_stack	*node;
+	int		len;
+
+	node = list;
+	len = count_values(list);
+	while (node)
+	{
+		if (node->pos > len / 2)
+			node->cost = -1 * (len - node->pos);
+		else
+			node->cost = node->pos;
+		node = node->next;
+	}
+}
+
+void	ft_total_cost(t_stack *list_a, t_stack *list_b)
+{
+	t_stack	*node_a;
+	t_stack	*node_b;
+	int		tmp;
+
+	node_b = list_b;
+	while (list_b)
+	{
+		node_a = list_a;
+		tmp = node_b->target_pos;
+		while (tmp-- > node_a->pos)
+			node_a = node_a->next;
+		if ((node_b->cost > 0 && node_a->cost > 0)
+			|| (node_b->cost < 0 && node_a->cost < 0))
+		{
+			if (ft_abs(node_b->cost) > ft_abs(node_a->cost))
+				node_b->total_cost = ft_abs(node_b->cost);
+			else
+				node_b->total_cost = ft_abs(node_a->cost);
+		}
+		else
+			node_b->total_cost = ft_abs(node_b->cost) + ft_abs(node_a->cost);
+		node_b = node_b->next;
+	}
+}
 
 void	ft_sorting(t_stack **list_a, t_stack **list_b)
 {
@@ -106,9 +112,10 @@ void	ft_sorting(t_stack **list_a, t_stack **list_b)
 	assign_pos(*list_a);
 	assign_pos(*list_b);
 	target_pos(*list_a, *list_b);
+	ft_costs(*list_a);
+	ft_costs(*list_b);
 	printf("Lista A:\n");
 	printlist(*list_a);
 	printf("Lista B:\n");
 	printlist(*list_b);
-	
 }
