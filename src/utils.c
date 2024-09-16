@@ -61,6 +61,7 @@ int	count_values(t_stack *list)
 	}
 	return (i);
 }
+
 double	ft_average(t_stack *list)
 {
 	int		sum;

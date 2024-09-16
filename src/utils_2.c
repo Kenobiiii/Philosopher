@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 13:42:51 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/16 16:46:57 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/16 16:51:29 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int	ft_abs(int nbr)
 	return (nbr);
 }
 
-int nearest_index(int index1, t_stack *list_a)
+int	nearest_index(int index1, t_stack *list_a)
 {
-	int     index2;
-	t_stack *compare;
+	int		index2;
+	t_stack	*compare;
 
 	index2 = INT_MAX;
 	compare = list_a;
@@ -34,7 +34,7 @@ int nearest_index(int index1, t_stack *list_a)
 		}
 		compare = compare->next;
 	}
-	return index2;
+	return (index2);
 }
 
 void	assign_pos(t_stack *list)
