@@ -37,7 +37,6 @@ int	main(int ac, char **av)
 		ft_pass(&a, &b);
 		three_algorithm(&a);
 		ft_sorting(&a, &b);
-		printlist(a);
 	}
 	return (0);
 }
