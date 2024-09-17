@@ -17,7 +17,7 @@ void	printlist(t_stack *node)
 	while (node != NULL)
 	{
 		ft_printf("(Value: %d, cost: %d Tottal_cost: %d) ", node->value,
-			node->pos, node->target_pos);
+			node->cost, node->total_cost);
 		node = node->next;
 	}
 	ft_printf("\n");

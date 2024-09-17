@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:28:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/16 16:44:54 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/17 12:27:26 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	rrr(t_stack **list_a, t_stack **list_b);
 void	three_algorithm(t_stack **list);
 void	ft_sorting(t_stack **list_a, t_stack **list_b);
 void	assign_pos(t_stack *list);
+void	ft_total_cost(t_stack **list_a, t_stack **list_b);
 
 t_stack	*ft_lstlastr(t_stack *lst);
 
@@ -62,6 +63,7 @@ int		count_values(t_stack *list);
 int		verify_index(t_stack *list, double average);
 int		ft_abs(int nbr);
 int		nearest_index(int index1, t_stack *list_a);
+int		ft_lowest_cost(t_stack *list);
 
 double	ft_average(t_stack *list);
 
