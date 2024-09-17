@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 13:04:05 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/17 13:58:53 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/17 15:52:06 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,9 @@ int	find_pos_first(t_stack	*list)
 		node = node->next;
 	}
 	if ((len - pos) < 0)
-		return (1);
-	else if ((len - pos) > 0)
 		return (2);
+	else if ((len - pos) > 0)
+		return (1);
 	else
 		return (0);
 }
