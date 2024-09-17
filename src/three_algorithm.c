@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 10:45:04 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/16 22:37:45 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/17 12:23:36 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,9 @@ void	three_algorithm(t_stack **list)
 {
 	t_stack	*node1;
 	t_stack	*node2;
-	//t_stack	*node3;
 
 	node1 = *list;
 	node2 = node1->next;
-	//node3 = node2->next;
 	if (node2->index > node1->index)
 		ft_higher_middle(list);
 	else if (node1->index > node2->index)
