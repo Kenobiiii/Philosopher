@@ -16,8 +16,7 @@ void	printlist(t_stack *node)
 {
 	while (node != NULL)
 	{
-		ft_printf("(Value: %d, cost: %d Tottal_cost: %d) ", node->value,
-			node->cost, node->total_cost);
+		ft_printf("Value: %d ", node->value);
 		node = node->next;
 	}
 	ft_printf("\n");
@@ -35,7 +34,10 @@ int	main(int ac, char **av)
 		three_algorithm(&a);
 	else
 	{
+		ft_pass(&a, &b);
+		three_algorithm(&a);
 		ft_sorting(&a, &b);
+		printlist(a);
 	}
 	return (0);
 }

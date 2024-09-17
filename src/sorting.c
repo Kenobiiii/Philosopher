@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 12:58:50 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/17 12:37:56 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/17 13:59:04 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,55 +87,19 @@ void	ft_move(t_stack **list_a, t_stack **list_b)
 	tmp = ft_lowest_cost(*list_b);
 	node_b = *list_b;
 	while (node_b->pos != tmp)
-	{
 		node_b = node_b->next;
-	}
 	node_a = *list_a;
 	while (node_a->pos != node_b->target_pos)
-	{
 		node_a = node_a->next;
-	}
 	while (node_b->cost != 0 || node_a->cost != 0)
 	{
-		if (node_a->cost > 0 && node_b->cost > 0)
-		{
-			rr(list_a, list_b);
-			node_a->cost--;
-			node_b->cost--;
-		}
-		else if (node_a->cost < 0 && node_b->cost < 0)
-		{
-			rrr(list_a, list_b);
-			node_a->cost++;
-			node_b->cost++;
-		}
-		else if (node_a->cost > 0)
-		{
-			ra(list_a);
-			node_a->cost--;
-		}
-		else if (node_a->cost < 0)
-		{
-			rra(list_a);
-			node_a->cost++;
-		}
-		else if (node_b->cost > 0)
-		{
-			rb(list_b);
-			node_b->cost--;
-		}
-		else if (node_b->cost < 0)
-		{
-			rrb(list_b);
-			node_b->cost++;
-		}
+		ft_same_sign(node_a, node_b);
+		ft_different_sign(list_a, list_b, node_a, node_b);
 	}
 }
 
 void	ft_sorting(t_stack **list_a, t_stack **list_b)
 {
-	ft_pass(list_a, list_b);
-	three_algorithm(list_a);
 	assign_pos(*list_a);
 	assign_pos(*list_b);
 	target_pos(*list_a, *list_b);
@@ -152,11 +116,6 @@ void	ft_sorting(t_stack **list_a, t_stack **list_b)
 		ft_costs(*list_a);
 		ft_costs(*list_b);
 		ft_total_cost(list_a, list_b);
-		printf("\n");
-		printlist(*list_b);
-		printf("\n");
 	}
-	rra(list_a);
-	rra(list_a);
-	printlist(*list_a);
+	final_sort(list_a);
 }
