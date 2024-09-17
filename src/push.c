@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 18:37:53 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/16 10:53:52 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/17 14:00:07 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,11 @@ void	push(t_stack **list_a, t_stack **list_b)
 void	pb(t_stack **list_a, t_stack **list_b)
 {
 	push(list_a, list_b);
+	ft_printf("pb\n");
 }
 
 void	pa(t_stack **list_a, t_stack **list_b)
 {
 	push(list_b, list_a);
+	ft_printf("pa\n");
 }
