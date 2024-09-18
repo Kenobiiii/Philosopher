@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:28:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/18 14:41:17 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/19 01:22:36 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ void	three_algorithm(t_stack **list);
 void	ft_sorting(t_stack **list_a, t_stack **list_b);
 void	assign_pos(t_stack *list);
 void	ft_total_cost(t_stack **list_a, t_stack **list_b);
-void	ft_same_sign(t_stack *node_a, t_stack *node_b);
+void	ft_same_sign(t_stack **list_a, t_stack **list_b,
+			t_stack *node_a, t_stack *node_b);
 void	ft_pass(t_stack **list_a, t_stack **list_b);
 void	final_sort(t_stack **list_a);
 void	ft_different_sign(t_stack **list_a, t_stack **list_b,
