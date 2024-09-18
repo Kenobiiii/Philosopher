@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 13:42:51 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/17 13:46:46 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/19 01:52:39 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	nearest_index(int index1, t_stack *list_a)
 		}
 		compare = compare->next;
 	}
-	if (lower == INT_MAX)
+	if (index2 == INT_MAX)
 		index2 = lower;
 	return (index2);
 }
