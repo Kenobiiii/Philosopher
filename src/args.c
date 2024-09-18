@@ -18,9 +18,12 @@ void	ft_add(t_stack	**list_ref, int new_value)
 	t_stack	*last;
 	int		index;
 
-	new_node = (t_stack *)malloc(sizeof(t_stack));
 	last = *list_ref;
+	new_node = (t_stack *)malloc(sizeof(t_stack));
+	if (new_node == NULL)
+		return ;
 	new_node->value = new_value;
+	new_node->next = NULL;
 	if (*list_ref == NULL)
 	{
 		*list_ref = new_node;
@@ -75,15 +78,15 @@ void	one_arg(char *array, t_stack **list)
 		i = 0;
 		while (token[i] != '\0')
 		{
-			if (!ft_isdigit(token[i]) && token[i] != '-'
-				&& token[i] != '+')
+			if ((!ft_isdigit(token[i]) && token[i] != '-' && token[i] != '+')
+				|| (token[i] == '-' && (!ft_isdigit(token[i + 1])
+						|| token[i - 1] == ' ')))
 				ft_error();
 			i++;
 		}
-		ft_add(list, ft_atoi(token));
+		ft_add(list, ft_push_atoi(token));
 		j++;
 	}
-	j = 0;
 	ft_free(tokens);
 }
 
@@ -91,6 +94,7 @@ void	various_args(int ac, char **av, t_stack **list)
 {
 	int	i;
 	int	j;
+	int	num;
 
 	i = 1;
 	j = 0;
@@ -100,13 +104,16 @@ void	various_args(int ac, char **av, t_stack **list)
 		{
 			if (!ft_isdigit(av[i][j]) && av[i][j] != '-'
 				&& av[i][j] != '+')
-			{
 				ft_error();
-			}
+			if (av[i][j] == '-' && ft_isdigit(av[i][j - 1]))
+				ft_error();
 			j++;
 		}
 		j = 0;
-		ft_add(list, ft_atoi(av[i]));
+		num = ft_push_atoi(av[i]);
+		if (!num)
+			ft_error();
+		ft_add(list, num);
 		i++;
 	}
 }

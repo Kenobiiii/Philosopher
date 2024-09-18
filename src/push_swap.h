@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:28:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/17 13:56:05 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/18 14:41:17 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int		ft_abs(int nbr);
 int		nearest_index(int index1, t_stack *list_a);
 int		ft_lowest_cost(t_stack *list);
 int		find_pos_first(t_stack	*list);
+int		ft_push_atoi(const char *str);
 
 double	ft_average(t_stack *list);
 
