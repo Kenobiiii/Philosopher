@@ -16,7 +16,7 @@ void	printlist(t_stack *node)
 {
 	while (node != NULL)
 	{
-		ft_printf("Value: %d ", node->value);
+		ft_printf("Value: %d, index%d ", node->value, node->index);
 		node = node->next;
 	}
 	ft_printf("\n");
