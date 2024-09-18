@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 12:58:50 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/18 14:08:47 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/19 01:52:53 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	ft_move(t_stack **list_a, t_stack **list_b)
 		node_a = node_a->next;
 	while (node_b->cost != 0 || node_a->cost != 0)
 	{
-		ft_same_sign(node_a, node_b);
+		ft_same_sign(list_a, list_b, node_a, node_b);
 		ft_different_sign(list_a, list_b, node_a, node_b);
 	}
 }
