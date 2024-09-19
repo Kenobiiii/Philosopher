@@ -6,11 +6,22 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 10:45:04 by paromero          #+#    #+#             */
-/*   Updated: 2024/09/17 12:24:31 by paromero         ###   ########.fr       */
+/*   Updated: 2024/09/19 13:35:47 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	two_algorithm(t_stack **list)
+{
+	t_stack	*node1;
+	t_stack	*node2;
+
+	node1 = *list;
+	node2 = node1->next;
+	if (node1->index > node2->index)
+		sa(list);
+}
 
 void	ft_higher_middle(t_stack **list)
 {

@@ -61,20 +61,9 @@ void	ft_free_list(t_stack *list)
 	}
 }
 
-void	two_algorithm(t_stack **list)
-{
-	t_stack	*node1;
-	t_stack	*node2;
-
-	node1 = *list;
-	node2 = node1->next;
-	if (node1->index > node2->index)
-		sa(list);
-}
-
 int	ft_sorted(t_stack *list)
 {
-	t_stack *node;
+	t_stack	*node;
 	int		tmp;
 
 	node = list;
