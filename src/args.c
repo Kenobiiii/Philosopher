@@ -80,7 +80,7 @@ void	one_arg(char *array, t_stack **list)
 		{
 			if ((!ft_isdigit(token[i]) && token[i] != '-' && token[i] != '+')
 				|| (token[i] == '-' && (!ft_isdigit(token[i + 1])
-						|| token[i - 1] == ' ')))
+						|| (i > 0 && token[i - 1] == ' '))))
 				ft_error();
 			i++;
 		}
