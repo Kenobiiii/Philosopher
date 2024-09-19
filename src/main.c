@@ -16,7 +16,7 @@ void	printlist(t_stack *node)
 {
 	while (node != NULL)
 	{
-		ft_printf("Value: %d, index%d ", node->value, node->index);
+		ft_printf("Value: %d ", node->value);
 		node = node->next;
 	}
 	ft_printf("\n");
@@ -72,6 +72,26 @@ void	two_algorithm(t_stack **list)
 		sa(list);
 }
 
+int	ft_sorted(t_stack *list)
+{
+	t_stack *node;
+	int		tmp;
+
+	node = list;
+	tmp = 0;
+	while (node)
+	{
+		if (node->index > tmp)
+		{
+			tmp = node->index;
+			node = node->next;
+		}
+		else
+			return (0);
+	}
+	return (1);
+}
+
 int	main(int ac, char **av)
 {
 	t_stack	*a;
@@ -84,7 +104,7 @@ int	main(int ac, char **av)
 		three_algorithm(&a);
 	else if (count_values(a) == 2)
 		two_algorithm(&a);
-	else if (count_values(a) > 3)
+	else if (count_values(a) > 3 && !ft_sorted(a))
 	{
 		ft_pass(&a, &b);
 		three_algorithm(&a);
