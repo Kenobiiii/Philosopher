@@ -111,8 +111,6 @@ void	various_args(int ac, char **av, t_stack **list)
 		}
 		j = 0;
 		num = ft_push_atoi(av[i]);
-		if (!num)
-			ft_error();
 		ft_add(list, num);
 		i++;
 	}
