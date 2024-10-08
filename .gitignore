@@ -2,9 +2,6 @@
 .vscode
 
 # ejecutables
-push_swap
+philo
 *.a
 *.o
-
-# checker
-checker_linux
