@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:37:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/08 10:51:12 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/08 19:24:21 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ typedef struct s_data
 
 int		check_input(int ac, char **av);
 int		ft_atoi(char *str);
+int		init_data(t_data *data, int ac, char **av);
 
 void	ft_format();
 
