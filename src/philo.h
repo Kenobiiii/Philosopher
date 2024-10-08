@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:37:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/08 09:47:15 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/08 10:51:12 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef struct s_philo
 	pthread_mutex_t	mut_last_eat_time;
 	u_int64_t		last_eat_time;
 }t_philo;
-wa
+
 typedef struct s_data
 {
 	int				nb_philos;
@@ -73,5 +73,10 @@ typedef struct s_data
 	pthread_mutex_t	*forks;
 	t_philo			*philos;
 }t_data;
+
+int		check_input(int ac, char **av);
+int		ft_atoi(char *str);
+
+void	ft_format();
 
 #endif
