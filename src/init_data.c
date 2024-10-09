@@ -6,11 +6,32 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:17:48 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/08 19:07:50 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/09 12:25:09 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+int	init_philos(t_data *data)
+{
+	int		i;
+	t_philo	*philos;
+
+	philos = data->philos;
+	i = 0;
+	while (i < data->nb_philos)
+	{
+		philos[i].data = data;
+		philos[i].id = i + 1;
+		philos[i].nb_meals_had = 0;
+		philos[i].state = IDLE;
+		pthread_mutex_init(&philos[i].mut_state, NULL);
+		pthread_mutex_init(&philos[i].mut_last_eat_time, NULL);
+		ptherad_mutex_init(&philos[i].mut_nb_meals_had, NULL);
+		i++;
+	}
+	return (0);
+}
 
 int	malloc_data(t_data *data)
 {

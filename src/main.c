@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 12:19:45 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/08 19:28:23 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/09 12:25:03 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	philosopher(int ac, char **av)
 
 	if (init_data(&data, ac, av) != 0)
 		return (MALLOC_ERROR);
+	init_philos(&data);
 	return (0);
 }
 
