@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:17:48 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/09 12:25:09 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/09 13:07:33 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,29 @@ int	init_philos(t_data *data)
 		pthread_mutex_init(&philos[i].mut_last_eat_time, NULL);
 		ptherad_mutex_init(&philos[i].mut_nb_meals_had, NULL);
 		i++;
+	}
+	return (0);
+}
+
+int	init_forks(t_data *data)
+{
+	int	i;
+	t_philo *philo;
+
+	i = 0;
+	philo = data->philos;
+	while (i < data->nb_philos)
+	{
+		pthread_mutex_init(&data->forks[i], NULL);
+		i++;
+	}
+	i = 0;
+	philo[0].left_f = &data[i]->forks[0];
+	philo[0].right_f = &data[i]->forks[data->nb_philos - 1];
+	while (i++ < data->nb_philos)
+	{
+		philo[i].left_f = &data[i]->forks[i];
+		philo[i].right_f = &data[i]->forks[i - 1];
 	}
 	return (0);
 }
