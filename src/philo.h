@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:37:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/09 13:09:41 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/10 11:58:51 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ int		ft_atoi(char *str);
 int		init_data(t_data *data, int ac, char **av);
 int		init_philos(t_data *data);
 int		init_forks(t_data *data);
+int		init_threads(t_data	*data);
 
 void	ft_format();
 
