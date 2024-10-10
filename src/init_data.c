@@ -6,11 +6,33 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:17:48 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/09 13:07:33 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/10 18:41:19 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+int	init_threads(t_data	*data)
+{
+	int	i;
+
+	i = 0;
+	while (i < data->nb_philos)
+	{
+		if (pthread_create(&data->philo_ths[i], NULL, rutine, &data->philos[i]))
+			return (1);
+		i++;
+	}
+	if (pthread_create(&data->monit_all_alive, NULL, monit_alive_rutine, data))
+		return (1);
+	if (data->nb_full_p != -1)
+	{
+		if (pthread_create(&data->monit_all_full, NULL,
+				monit_full_rutine, data))
+			return (1);
+	}
+	return (0);
+}
 
 int	init_philos(t_data *data)
 {
@@ -35,8 +57,8 @@ int	init_philos(t_data *data)
 
 int	init_forks(t_data *data)
 {
-	int	i;
-	t_philo *philo;
+	int		i;
+	t_philo	*philo;
 
 	i = 0;
 	philo = data->philos;
