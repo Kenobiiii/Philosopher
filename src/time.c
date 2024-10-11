@@ -6,15 +6,15 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 18:19:29 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/11 18:34:38 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/11 18:59:24 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"philo.h"
+#include "philo.h"
 
 u_int64_t	get_time(void)
 {
-	struct timeval tv;
+	struct timeval	tv;
 
 	if (gettimeofday(&tv, NULL))
 		return (0);

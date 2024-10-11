@@ -6,13 +6,13 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 18:17:07 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/10 19:14:55 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/11 19:01:07 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	 monit_alive_rutine(void *av)
+void	monit_alive_rutine(void *av)
 {
 	t_data	*data;
 	int		i;

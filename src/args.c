@@ -6,13 +6,13 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 09:47:54 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/08 11:04:10 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/11 19:00:44 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void ft_format()
+void	ft_format(void)
 {
 	printf("Format:\n");
 	printf("./philo ");
@@ -49,7 +49,7 @@ int	ft_atoi(char *str)
 	return (result * sign);
 }
 
-int ft_is_num(int ac, char **av)
+int	ft_is_num(int ac, char **av)
 {
 	int	i;
 	int	j;
@@ -71,7 +71,7 @@ int ft_is_num(int ac, char **av)
 
 int	wrong_input_check(int ac, char **av)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	if (ac == 6 && ft_atoi(av[5]) <= 0)
@@ -93,7 +93,7 @@ int	check_input(int ac, char **av)
 	if (ac < 5)
 		return (WRONG_INPUT);
 	if (ac > 6)
-		return	(WRONG_INPUT);
+		return (WRONG_INPUT);
 	if (ft_is_num(ac, av) != 0)
 		return (WRONG_INPUT);
 	if (wrong_input_check(ac, av))

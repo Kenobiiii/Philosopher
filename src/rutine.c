@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 11:59:00 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/10 17:58:48 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/11 18:59:51 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,5 @@ void	rutine(void	*av)
 	philo = (t_philo *)av;
 	while ()
 	{
-		
 	}
-	
 }
