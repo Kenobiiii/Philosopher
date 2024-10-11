@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:37:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/10 11:58:51 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/11 18:42:24 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ typedef struct s_data
 	pthread_mutex_t	mut_print;
 	pthread_mutex_t	mut_nb_philos;
 	pthread_mutex_t	mut_keep_iter;
-	pthread_mutex_t	mut_start_time;
 	pthread_t		monit_all_alive;
 	pthread_t		monit_all_full;
 	pthread_t		*philo_ths;
@@ -82,5 +81,7 @@ int		init_forks(t_data *data);
 int		init_threads(t_data	*data);
 
 void	ft_format();
+
+u_int64_t	get_time(void);
 
 #endif

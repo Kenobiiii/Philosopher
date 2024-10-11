@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:17:48 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/10 18:41:19 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/11 18:42:12 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ int	init_data(t_data *data, int ac, char **av)
 	data->eat_time = (u_int64_t) ft_atoi(av[3]);
 	data->die_time = (u_int64_t) ft_atoi(av[2]);
 	data->sleep_time = (u_int64_t) ft_atoi(av[4]);
+	data->start_time = get_time();
 	data->nb_meals = -1;
 	if (ac == 6)
 		data->nb_meals = ft_atoi(av[5]);
@@ -109,6 +110,5 @@ int	init_data(t_data *data, int ac, char **av)
 	pthread_mutex_init(&data->mut_nb_philos, NULL);
 	pthread_mutex_init(&data->mut_print, NULL);
 	pthread_mutex_init(&data->mut_sleep_t, NULL);
-	pthread_mutex_init(&data->mut_start_time, NULL);
 	return (malloc_data(data));
 }
