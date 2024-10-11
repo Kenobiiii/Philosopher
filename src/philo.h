@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:37:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/11 18:42:24 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/11 18:49:38 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ typedef struct s_philo
 	pthread_mutex_t	mut_nb_meals_had;
 	pthread_mutex_t	mut_last_eat_time;
 	u_int64_t		last_eat_time;
-}t_philo;
+}	t_philo;
 
 typedef struct s_data
 {
@@ -71,16 +71,17 @@ typedef struct s_data
 	pthread_t		*philo_ths;
 	pthread_mutex_t	*forks;
 	t_philo			*philos;
-}t_data;
+}	t_data;
 
-int		check_input(int ac, char **av);
-int		ft_atoi(char *str);
-int		init_data(t_data *data, int ac, char **av);
-int		init_philos(t_data *data);
-int		init_forks(t_data *data);
-int		init_threads(t_data	*data);
+int			check_input(int ac, char **av);
+int			ft_atoi(char *str);
+int			init_data(t_data *data, int ac, char **av);
+int			init_philos(t_data *data);
+int			init_forks(t_data *data);
+int			init_threads(t_data	*data);
 
-void	ft_format();
+void		ft_format(void);
+void		eat(t_philo	*philo);
 
 u_int64_t	get_time(void);
 
