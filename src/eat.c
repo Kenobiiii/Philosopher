@@ -6,26 +6,47 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 17:53:05 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/14 13:40:51 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:36:33 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	takeforks(t_philo *philo)
+int	take_l(t_philo *philo)
 {
+	if (philo_died(philo) || get_state(philo) == DEAD)
+		return (1);
 	pthread_mutex_lock(philo->left_f);
 	printf("%lu Philosopher %d has taken a fork\n",
 		get_time() - philo->data->start_time, philo->id);
+	return (0);
+}
+
+int	take_r(t_philo *philo)
+{
+	if (philo_died(philo) || get_state(philo) == DEAD)
+	{
+		pthread_mutex_unlock(philo->left_f);	
+		return (1);
+	}
 	pthread_mutex_lock(philo->right_f);
 	printf("%lu Philosopher %d has taken a fork\n",
 		get_time() - philo->data->start_time, philo->id);
+	return (0);
+}
+
+int	takeforks(t_philo *philo)
+{
+	if (take_l(philo))
+		return (1);
+	if (take_r(philo))
+		return (1);
+	return (0);
 }
 
 int	eat(t_philo	*philo)
 {
-	takeforks(philo);
-	if (get_state(philo) == DEAD)
+	if (takeforks(philo))
 		return (1);
 	pthread_mutex_lock(&philo->mut_last_eat_time);
 	printf("%lu Philosopher %d is eating\n",
