@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 11:59:00 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/14 11:26:38 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/14 11:46:43 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,15 @@ void	rutine(void	*av)
 	philo = (t_philo *)av;
 	while ()
 	{
-		eat(philo);
+		if (eat(philo) != 0)
+			break;
 		if (philo->state == DEAD)
 			break;
-		ft_sleep(philo);
+		if (ft_sleep(philo) != 0)
+			break;
 		if (philo->state == DEAD)
 			break;
-		think(philo);
+		if (think(philo) != 0)
+			break;
 	}
 }
