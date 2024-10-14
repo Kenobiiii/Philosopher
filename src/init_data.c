@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:17:48 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/11 18:42:12 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/14 13:35:22 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	init_forks(t_data *data)
 	i = 0;
 	philo[0].left_f = &data[i]->forks[0];
 	philo[0].right_f = &data[i]->forks[data->nb_philos - 1];
-	while (i++ < data->nb_philos)
+	while (++i < data->nb_philos)
 	{
 		philo[i].left_f = &data[i]->forks[i];
 		philo[i].right_f = &data[i]->forks[i - 1];

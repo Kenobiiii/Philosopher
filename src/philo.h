@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:37:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/14 11:59:08 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/14 13:37:11 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ int			eat(t_philo	*philo);
 
 void		ft_format(void);
 void		set_state(t_philo *philo, t_state state);
+void		rutine(void	*av);
 
 u_int64_t	get_time(void);
 
