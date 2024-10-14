@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 17:53:05 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/14 17:36:33 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/14 19:47:25 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,18 +44,23 @@ int	takeforks(t_philo *philo)
 	return (0);
 }
 
+void	update_last_meal_time(t_philo *philo)
+{
+	pthread_mutex_lock(&philo->mut_last_eat_time);
+	philo->last_eat_time = get_time();
+	pthread_mutex_unlock(&philo->mut_last_eat_time);
+}
+
 int	eat(t_philo	*philo)
 {
 	if (takeforks(philo))
 		return (1);
-	pthread_mutex_lock(&philo->mut_last_eat_time);
+	update_last_meal_time(philo);
 	printf("%lu Philosopher %d is eating\n",
 		get_time() - philo->data->start_time, philo->id);
-	philo->last_eat_time = (get_time() - philo->data->start_time);
 	set_state(philo, EATING);
 	usleep(philo->data->eat_time * 1000);
 	pthread_mutex_unlock(philo->left_f);
 	pthread_mutex_unlock(philo->right_f);
-	pthread_mutex_unlock(&philo->mut_last_eat_time);
 	return (0);
 }

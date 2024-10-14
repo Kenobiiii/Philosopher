@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:17:48 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/14 18:13:12 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/14 18:47:17 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int	init_philos(t_data *data)
 		philos[i].id = i + 1;
 		philos[i].nb_meals_had = 0;
 		philos[i].state = IDLE;
+		philos[i].last_eat_time = data->start_time;
 		pthread_mutex_init(&philos[i].mut_state, NULL);
 		pthread_mutex_init(&philos[i].mut_last_eat_time, NULL);
 		pthread_mutex_init(&philos[i].mut_nb_meals_had, NULL);
@@ -68,12 +69,12 @@ int	init_forks(t_data *data)
 		i++;
 	}
 	i = 0;
-	philo[0].left_f = &data[i].forks[0];
-	philo[0].right_f = &data[i].forks[data->nb_philos - 1];
+	philo[0].left_f = &data->forks[0];
+	philo[0].right_f = &data->forks[data->nb_philos - 1];
 	while (++i < data->nb_philos)
 	{
-		philo[i].left_f = &data[i].forks[i];
-		philo[i].right_f = &data[i].forks[i - 1];
+		philo[i].left_f = &data->forks[i];
+		philo[i].right_f = &data->forks[i - 1];
 	}
 	return (0);
 }
