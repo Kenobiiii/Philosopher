@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:03:05 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/14 13:40:51 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/14 18:18:35 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_sleep(t_philo *philo)
 	if (get_state(philo) == DEAD)
 		return (1);
 	printf("%lu Philosopher %d is sleeping\n",
-		get_time - philo->data->start_time, philo->id);
+		get_time() - philo->data->start_time, philo->id);
 	usleep(philo->data->sleep_time * 1000);
 	return (0);
 }

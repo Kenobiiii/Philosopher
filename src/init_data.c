@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:17:48 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/14 17:09:08 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/14 18:13:12 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ int	init_threads(t_data	*data)
 	i = 0;
 	while (i < data->nb_philos)
 	{
-		if (pthread_create(&data->philo_ths[i], NULL, rutine, &data->philos[i]))
+		if (pthread_create(&data->philo_ths[i], NULL, &rutine, &data->philos[i]))
 			return (1);
 		i++;
 	}
-	if (pthread_create(&data->monit_all_alive, NULL, monit_alive_rutine, data))
+	if (pthread_create(&data->monit_all_alive, NULL, &monit_alive_rutine, data))
 		return (1);
-	if (data->nb_full_p != -1)
-	{
-		if (pthread_create(&data->monit_all_full, NULL,
-				monit_full_rutine, data))
-			return (1);
-	}
+	// if (data->nb_full_p != -1)
+	// {
+	// 	if (pthread_create(&data->monit_all_full, NULL,
+	// 			monit_full_rutine, data))
+	// 		return (1);
+	// }
 	return (0);
 }
 

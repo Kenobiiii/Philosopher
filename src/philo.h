@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:37:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/14 17:29:52 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/14 18:18:11 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,10 +83,12 @@ int			init_threads(t_data	*data);
 int			ft_sleep(t_philo   *philo);
 int			eat(t_philo	*philo);
 int			philo_died(t_philo *philo);
+int			think(t_philo *philo);
 
 void		ft_format(void);
 void		set_state(t_philo *philo, t_state state);
 void		*rutine(void	*av);
+void		*monit_alive_rutine(void *av);
 
 u_int64_t	get_time(void);
 

@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 11:59:00 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/14 17:10:10 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/14 18:17:51 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,5 @@ void	*rutine(void	*av)
 		if (think(philo) != 0)
 			break;
 	}
+	return (0);
 }
