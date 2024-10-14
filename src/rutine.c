@@ -6,13 +6,13 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 11:59:00 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/14 11:55:54 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:10:10 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	rutine(void	*av)
+void	*rutine(void	*av)
 {
 	t_philo	*philo;
 
