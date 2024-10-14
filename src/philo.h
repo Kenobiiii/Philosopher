@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:37:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/14 11:26:41 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/14 11:48:34 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,14 @@ int			init_data(t_data *data, int ac, char **av);
 int			init_philos(t_data *data);
 int			init_forks(t_data *data);
 int			init_threads(t_data	*data);
+int			ft_sleep(t_philo   *philo);
+int			eat(t_philo	*philo);
 
 void		ft_format(void);
-void		eat(t_philo	*philo);
 void		set_state(t_philo *philo, t_state state);
-void		ft_sleep(t_philo   *philo);
 
 u_int64_t	get_time(void);
+
+t_state	get_state(t_philo *philo);
 
 #endif
