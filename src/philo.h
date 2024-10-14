@@ -6,19 +6,20 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:37:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/14 11:48:34 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/14 11:59:08 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILO_H
 # define PHILO_H
 
-# include <string.h>
+# include <unistd.h>
+# include <pthread.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include <unistd.h>
+# include <string.h>
 # include <sys/time.h>
-# include <pthread.h>
+# include <stdint.h>
 # include <stdbool.h>
 
 # define WRONG_INPUT 1
