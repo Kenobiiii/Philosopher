@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:07:05 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/15 18:28:28 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/15 18:58:43 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ void	ft_usleep(uint64_t sleep_time)
 
 	start = get_time();
 	while ((get_time() - start) < sleep_time)
-		usleep(500);
+		usleep(100);
 }
