@@ -5,7 +5,7 @@ CC = clang
 CFLAGS = -Wall -Werror -Wextra
 
 USER		= paromero
-SRCS		= src/main.c src/args.c src/eat.c src/init_data.c src/monit.c src/rutine.c src/sleep.c src/think.c src/time.c src/utils.c
+SRCS		= src/main.c src/args.c src/eat.c src/init_data.c src/monit.c src/rutine.c src/sleep.c src/think.c src/time.c src/utils.c src/gets.c
 OBJS		= $(SRCS:.c=.o)
 
 NAME = philo
