@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:37:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/15 17:35:20 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/15 18:28:39 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ void		*rutine(void	*av);
 void		*monit_alive_rutine(void *av);
 void		set_keep_iter(t_data *data, bool state);
 void		update_last_meal_time(t_philo *philo);
+void		ft_usleep(uint64_t sleep_time);
 
 u_int64_t	get_time(void);
 

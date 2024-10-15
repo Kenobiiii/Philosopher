@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:07:05 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/15 17:26:31 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/15 18:28:28 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,13 @@ void	set_keep_iter(t_data *data, bool state)
 	pthread_mutex_lock(&data->mut_keep_iter);
 	data->keep_iterating = state;
 	pthread_mutex_unlock(&data->mut_keep_iter);
+}
+
+void	ft_usleep(uint64_t sleep_time)
+{
+	u_int64_t	start;
+
+	start = get_time();
+	while ((get_time() - start) < sleep_time)
+		usleep(500);
 }
