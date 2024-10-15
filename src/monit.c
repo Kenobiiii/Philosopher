@@ -6,11 +6,21 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 18:17:07 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/15 17:50:55 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/15 19:35:29 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+bool	is_philo_full(t_data *data, t_philo *philo)
+{
+	bool	result;
+
+	result = false;
+	if (get_nb_meals_philo_had(philo) >= data->nb_meals)
+		result = true;
+	return (result);
+}
 
 int	philo_died(t_philo *philo)
 {
@@ -67,6 +77,29 @@ void	*monit_alive_rutine(void *av)
 		if (i == nb_philos - 1)
 			i = -1;
 		usleep(1000);
+	}
+	return (NULL);
+}
+
+void	*monit_full_rutine(void	*av)
+{
+	t_data	*data;
+	int		i;
+	int		nb_philos;
+
+	data = (t_data *)av;
+	nb_philos = data->nb_philos;
+	i = -1;
+	while (i++ < nb_philos && get_keep_iter(data))
+	{
+		usleep(1000);
+		if (is_philo_full(data, &data->philos[i]) == false)
+			i = -1;
+	}
+	if (get_keep_iter(data) == true)
+	{
+		set_keep_iter(data, false);
+		notify_philos(data);
 	}
 	return (NULL);
 }

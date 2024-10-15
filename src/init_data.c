@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:17:48 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/14 18:47:17 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/15 19:39:22 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,13 @@ int	init_threads(t_data	*data)
 	}
 	if (pthread_create(&data->monit_all_alive, NULL, &monit_alive_rutine, data))
 		return (1);
-	// if (data->nb_full_p != -1)
-	// {
-	// 	if (pthread_create(&data->monit_all_full, NULL,
-	// 			monit_full_rutine, data))
-	// 		return (1);
-	// }
+	if (data->nb_full_p != -1)
+	{
+		printf("asd");
+		if (pthread_create(&data->monit_all_full, NULL,
+				&monit_full_rutine, data))
+			return (1);
+	}
 	return (0);
 }
 

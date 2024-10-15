@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 17:53:05 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/15 19:02:33 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/15 19:25:56 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,9 @@ int	eat(t_philo	*philo)
 		get_time() - philo->data->start_time, philo->id);
 	set_state(philo, EATING);
 	ft_usleep(philo->data->eat_time);
+	pthread_mutex_lock(&philo->mut_nb_meals_had);
+	philo->nb_meals_had++;
+	pthread_mutex_unlock(&philo->mut_nb_meals_had);
 	pthread_mutex_unlock(philo->left_f);
 	pthread_mutex_unlock(philo->right_f);
 	return (0);
