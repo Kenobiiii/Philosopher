@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 17:53:05 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/14 19:47:25 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/15 17:14:36 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,7 @@ int	take_l(t_philo *philo)
 int	take_r(t_philo *philo)
 {
 	if (philo_died(philo) || get_state(philo) == DEAD)
-	{
-		pthread_mutex_unlock(philo->left_f);	
 		return (1);
-	}
 	pthread_mutex_lock(philo->right_f);
 	printf("%lu Philosopher %d has taken a fork\n",
 		get_time() - philo->data->start_time, philo->id);
@@ -37,10 +34,13 @@ int	take_r(t_philo *philo)
 
 int	takeforks(t_philo *philo)
 {
-	if (take_l(philo))
-		return (1);
 	if (take_r(philo))
 		return (1);
+	if (take_l(philo))
+	{
+		pthread_mutex_unlock(philo->right_f);	
+		return (1);
+	}
 	return (0);
 }
 
