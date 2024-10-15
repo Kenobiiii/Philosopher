@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 11:59:00 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/14 18:17:51 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/15 17:45:34 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ void	*rutine(void	*av)
 	t_philo	*philo;
 
 	philo = (t_philo *)av;
+	update_last_meal_time(philo);
+	if (philo->id % 2 == 0)
+    	usleep(philo->data->eat_time - 10);
 	while (get_state(philo) != DEAD)
 	{
 		if (eat(philo) != 0)
