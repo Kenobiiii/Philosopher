@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 17:53:05 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/15 19:25:56 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/16 12:17:08 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ int	take_l(t_philo *philo)
 	if (philo_died(philo) || get_state(philo) == DEAD)
 		return (1);
 	pthread_mutex_lock(philo->left_f);
+	if (philo_died(philo) || get_state(philo) == DEAD)
+	{
+		pthread_mutex_unlock(philo->left_f);
+		return (1);
+	}
 	printf("%lu %d has taken a fork\n",
 		get_time() - philo->data->start_time, philo->id);
 	return (0);
@@ -27,6 +32,11 @@ int	take_r(t_philo *philo)
 	if (philo_died(philo) || get_state(philo) == DEAD)
 		return (1);
 	pthread_mutex_lock(philo->right_f);
+	if (philo_died(philo) || get_state(philo) == DEAD)
+	{
+		pthread_mutex_unlock(philo->right_f);
+		return (1);
+	}
 	printf("%lu %d has taken a fork\n",
 		get_time() - philo->data->start_time, philo->id);
 	return (0);
@@ -34,6 +44,8 @@ int	take_r(t_philo *philo)
 
 int	takeforks(t_philo *philo)
 {
+	if (philo->data->nb_philos == 1)
+		return (handle_one(philo));
 	if (take_r(philo))
 		return (1);
 	if (take_l(philo))
@@ -55,6 +67,12 @@ int	eat(t_philo	*philo)
 {
 	if (takeforks(philo))
 		return (1);
+	if (philo_died(philo) || get_state(philo) == DEAD)
+	{
+		pthread_mutex_unlock(philo->left_f);
+		pthread_mutex_unlock(philo->right_f);
+		return (1);
+	}
 	update_last_meal_time(philo);
 	printf("%lu %d is eating\n",
 		get_time() - philo->data->start_time, philo->id);
