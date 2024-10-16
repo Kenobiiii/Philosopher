@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:07:05 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/15 19:37:27 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/16 12:12:42 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,10 @@ void	ft_usleep(uint64_t sleep_time)
 		usleep(100);
 }
 
-int	get_nb_meals_philo_had(t_philo *philo)
+int	handle_one(t_philo *philo)
 {
-	int	nb_meals_had;
-
-	pthread_mutex_lock(&philo->mut_nb_meals_had);
-	nb_meals_had = philo->nb_meals_had;
-	pthread_mutex_unlock(&philo->mut_nb_meals_had);
-	return (nb_meals_had);
+	take_l(philo);
+	ft_usleep(philo->data->die_time);
+	set_state(philo, DEAD);
+	return (1);
 }
