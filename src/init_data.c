@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:17:48 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/15 19:48:20 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/16 10:31:01 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	init_threads(t_data	*data)
 		return (1);
 	if (data->nb_meals != -1)
 	{
-		printf("asd");
 		if (pthread_create(&data->monit_all_full, NULL,
 				&monit_full_rutine, data))
 			return (1);
