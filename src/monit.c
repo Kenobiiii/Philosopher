@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 18:17:07 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/16 12:29:05 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/16 12:34:08 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,6 @@ void	*monit_full_rutine(void	*av)
 
 	data = (t_data *)av;
 	nb_philos = data->nb_philos;
-	i = 0;
 	while (get_keep_iter(data))
 	{
 		all_full = true;
@@ -107,10 +106,7 @@ void	*monit_full_rutine(void	*av)
 			i++;
 		}
 		if (all_full)
-		{
-			set_keep_iter(data, false);
-			notify_philos(data);
-		}
+			ft_all_full(data);
 	}
 	return (NULL);
 }
