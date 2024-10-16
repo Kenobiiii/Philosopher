@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 17:24:50 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/16 12:27:10 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/16 18:25:26 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,14 @@ int	get_nb_meals_philo_had(t_philo *philo)
 	nb_meals_had = philo->nb_meals_had;
 	pthread_mutex_unlock(&philo->mut_nb_meals_had);
 	return (nb_meals_had);
+}
+
+int	get_nb_philos(t_data *data)
+{
+	int	nb;
+
+	pthread_mutex_lock(&data->mut_nb_philos);
+	nb = data->nb_philos;
+	pthread_mutex_unlock(&data->mut_nb_philos);
+	return (nb);
 }
