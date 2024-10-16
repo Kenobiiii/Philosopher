@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:37:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/15 19:37:40 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/16 12:12:34 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,9 @@ int			ft_sleep(t_philo   *philo);
 int			eat(t_philo	*philo);
 int			philo_died(t_philo *philo);
 int			think(t_philo *philo);
-int		get_nb_meals_philo_had(t_philo *philo);
+int			get_nb_meals_philo_had(t_philo *philo);
+int			handle_one(t_philo *philo);
+int			take_l(t_philo *philo);
 
 void		ft_format(void);
 void		set_state(t_philo *philo, t_state state);
