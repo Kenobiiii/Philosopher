@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 18:17:07 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/16 12:34:08 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/16 18:26:53 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	notify_philos(t_data *data)
 	int		i;
 	int		nb_philos;
 
-	nb_philos = data->nb_philos;
+	nb_philos = get_nb_philos(data);
 	philos = data->philos;
 	i = -1;
 	while (++i < nb_philos)
@@ -90,7 +90,7 @@ void	*monit_full_rutine(void	*av)
 	bool	all_full;
 
 	data = (t_data *)av;
-	nb_philos = data->nb_philos;
+	nb_philos = get_nb_philos(data);
 	while (get_keep_iter(data))
 	{
 		all_full = true;
