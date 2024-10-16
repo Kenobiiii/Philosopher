@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 17:53:05 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/16 12:17:08 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/16 12:27:00 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	takeforks(t_philo *philo)
 		return (1);
 	if (take_l(philo))
 	{
-		pthread_mutex_unlock(philo->right_f);	
+		pthread_mutex_unlock(philo->right_f);
 		return (1);
 	}
 	return (0);

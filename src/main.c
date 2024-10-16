@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 12:19:45 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/15 19:38:26 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/16 12:28:09 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	free_data(t_data *data)
 {
-		int	i;
+	int	i;
 	int	nb_philos;
 
 	nb_philos = data->nb_philos;
@@ -39,7 +39,7 @@ void	free_data(t_data *data)
 
 int	join_threads(t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (pthread_join(data->monit_all_alive, NULL))

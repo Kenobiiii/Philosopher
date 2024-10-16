@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:37:09 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/16 12:12:34 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/16 12:26:26 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int			init_data(t_data *data, int ac, char **av);
 int			init_philos(t_data *data);
 int			init_forks(t_data *data);
 int			init_threads(t_data	*data);
-int			ft_sleep(t_philo   *philo);
+int			ft_sleep(t_philo *philo);
 int			eat(t_philo	*philo);
 int			philo_died(t_philo *philo);
 int			think(t_philo *philo);
@@ -100,7 +100,6 @@ void		ft_usleep(uint64_t sleep_time);
 u_int64_t	get_time(void);
 
 t_state		get_state(t_philo *philo);
-
 
 bool		get_keep_iter(t_data *data);
 bool		nb_meals_option(t_data *data);

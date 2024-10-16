@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 18:17:07 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/16 11:33:55 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/16 12:29:05 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,15 @@ bool	is_philo_full(t_data *data, t_philo *philo)
 	bool	result;
 
 	result = false;
-	//printf("philo: %d\n", philo->id);
 	if (get_nb_meals_philo_had(philo) >= data->nb_meals)
 		result = true;
-	//printf("philo: %d comidas: %d\n", philo->id, get_nb_meals_philo_had(philo));
 	return (result);
 }
 
 int	philo_died(t_philo *philo)
 {
 	t_data	*data;
-	int result;
+	int		result;
 
 	data = philo->data;
 	result = 0;
@@ -70,11 +68,11 @@ void	*monit_alive_rutine(void *av)
 	{
 		if (philo_died(&philos[i]) && get_keep_iter(data))
 		{
-			printf("%lu %d has died\n", 
-					(get_time() - data->start_time), philos[i].id);
+			printf("%lu %d has died\n",
+				(get_time() - data->start_time), philos[i].id);
 			set_keep_iter(data, false);
 			notify_philos(data);
-			break;
+			break ;
 		}
 		if (i == nb_philos - 1)
 			i = -1;
@@ -104,7 +102,7 @@ void	*monit_full_rutine(void	*av)
 			if (!is_philo_full(data, &data->philos[i]))
 			{
 				all_full = false;
-				break;
+				break ;
 			}
 			i++;
 		}

@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 17:24:50 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/16 11:58:04 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/16 12:27:10 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ bool	get_keep_iter(t_data *data)
 t_state	get_state(t_philo *philo)
 {
 	t_state	state;
-	
+
 	pthread_mutex_lock(&philo->mut_state);
 	state = philo->state;
 	pthread_mutex_unlock(&philo->mut_state);

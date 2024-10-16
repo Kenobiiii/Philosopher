@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:17:48 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/16 10:31:01 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/16 12:27:28 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int	init_threads(t_data	*data)
 	i = 0;
 	while (i < data->nb_philos)
 	{
-		if (pthread_create(&data->philo_ths[i], NULL, &rutine, &data->philos[i]))
+		if (pthread_create(&data->philo_ths[i], NULL, &rutine,
+				&data->philos[i]))
 			return (1);
 		i++;
 	}
