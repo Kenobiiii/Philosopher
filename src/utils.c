@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:07:05 by paromero          #+#    #+#             */
-/*   Updated: 2024/10/16 12:26:07 by paromero         ###   ########.fr       */
+/*   Updated: 2024/10/17 11:59:47 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ int	handle_one(t_philo *philo)
 	take_l(philo);
 	ft_usleep(philo->data->die_time);
 	set_state(philo, DEAD);
+	pthread_mutex_unlock(philo->left_f);
 	return (1);
 }
